@@ -102,11 +102,24 @@ def main():
                 print("Servicio: " + p.verServicio()) 
             else:
                 print("No existe un paciente con esa cedula") 
-        elif opcion !=0:
-            continue 
-        else:
-            break 
+       
+        elif opcion == 3:
+        print("\nELIMINAR PACIENTE")
+        print("-"*50)
+        try:
+                c = int(input("Ingrese la cédula del paciente a eliminar: ")) 
+                if sis.eliminarPaciente(c):
+                    print("\nPaciente eliminado con éxito")
+                else:
+                    print("\nNo se encontró un paciente con esa cédula")
+        except ValueError:
+                print("\nError: Cédula debe ser un número")
+        
 
+
+         elif opcion == 0:
+            print("\nSaliendo del sistema...")
+            break
 #aca el python descubre cual es la funcion principal
 if __name__ == "__main__":
     main() 
