@@ -45,7 +45,13 @@ class Sistema:
             #retorne la cedula y la comparo con la ingresada por teclado
             if c == p.verCedula():
                 return p #si encuentro el paciente lo retorno
-            
+    def eliminarPaciente(self, Cedula):
+     for p in self.__lista_pacientes:
+        if p.verCedula() == Cedula:
+            self.__lista_pacientes.remove(p)
+            return True
+     return False
+  
     def verNumeroPacientes(self):
         print("En el sistema hay: " + str(len(self.__lista_pacientes)) + " pacientes") 
 def mostrar_menu():
@@ -103,26 +109,27 @@ def main():
             else:
                 print("No existe un paciente con esa cedula") 
        
-        elif opcion == 3:
-        print("\nELIMINAR PACIENTE")
-        print("-"*50)
-        try:
-                c = int(input("Ingrese la cédula del paciente a eliminar: ")) 
-                if sis.eliminarPaciente(c):
-                    print("\nPaciente eliminado con éxito")
-                else:
-                    print("\nNo se encontró un paciente con esa cédula")
-        except ValueError:
-                print("\nError: Cédula debe ser un número")
-        
-         elif opcion == 4:
+                elif opcion == 3:
+                print("\nELIMINAR PACIENTE")
+                print("-"*50)
+                try:
+                    c = int(input("Ingrese la cédula del paciente a eliminar: ")) 
+                    if sis.eliminarPaciente(c):
+                        print("\nPaciente eliminado con éxito")
+                    else:
+                        print("\nNo se encontró un paciente con esa cédula")
+                except ValueError:
+                    print("\nError: Cédula debe ser un número")
+
+        elif opcion == 4:
             print("\nESTADÍSTICAS DEL SISTEMA")
             print("-"*50)
-            print(f"\nTotal de pacientes en el sistema: {sis.verNumeroPacientes()}")
+            sis.verNumeroPacientes()  # No imprimas lo que ya se imprime
 
-         elif opcion == 0:
+        elif opcion == 0:
             print("\nSaliendo del sistema...")
             break
+
 #aca el python descubre cual es la funcion principal
 if __name__ == "__main__":
     main() 
