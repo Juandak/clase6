@@ -48,6 +48,17 @@ class Sistema:
             
     def verNumeroPacientes(self):
         print("En el sistema hay: " + str(len(self.__lista_pacientes)) + " pacientes") 
+def mostrar_menu():
+    """Muestra el menú principal del sistema"""
+    print("\n" + "="*50)
+    print("SISTEMA DE GESTIÓN HOSPITALARIA".center(50))
+    print("="*50)
+    print("1. Ingresar nuevo paciente")
+    print("2. Ver datos de paciente")
+    print("3. Eliminar paciente")
+    print("4. Ver número de pacientes")
+    print("0. Salir")
+    print("="*50)
 
 def main():
     sis = Sistema() 
@@ -100,7 +111,7 @@ def main():
 if __name__ == "__main__":
     main() 
         
-        
+
         
         
         
