@@ -115,7 +115,10 @@ def main():
         except ValueError:
                 print("\nError: Cédula debe ser un número")
         
-
+         elif opcion == 4:
+            print("\nESTADÍSTICAS DEL SISTEMA")
+            print("-"*50)
+            print(f"\nTotal de pacientes en el sistema: {sis.verNumeroPacientes()}")
 
          elif opcion == 0:
             print("\nSaliendo del sistema...")
